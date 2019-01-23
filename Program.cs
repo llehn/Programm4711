@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Programm4711
 {
@@ -6,7 +7,9 @@ namespace Programm4711
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string path = "lol.txt";
+            string readText = File.ReadAllText(path);
+            Console.WriteLine(readText);
         }
     }
 }
