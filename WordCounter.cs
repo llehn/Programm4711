@@ -11,7 +11,8 @@ namespace Programm4711
                 return 0;
 
             input = input.Replace(" -", " ");
-            input = input.Replace("\r\n", " ");
+            input = input.Replace("\r", " ");
+            input = input.Replace("\n", " ");
 
             var k = input.Split('_', ' ', ',', '!', '?').Where(elem => elem != "").ToArray();
 

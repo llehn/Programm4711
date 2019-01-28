@@ -95,5 +95,11 @@ namespace Programm4711
             var sut = new WordCounter();
             sut.CountWords("das ist eine\r\ndatei mit\r\nmehreren\r\nzeilen\r\nund zeugs").Should().Be(9);
         }
+          [Fact]
+        public void With_LineBreaks()
+        {
+            var sut = new WordCounter();
+            sut.CountWords("das ist eine\ndatei mit\nmehreren\nzeilen\nund zeugs").Should().Be(9);
+        }
     }
 }
