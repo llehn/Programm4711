@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 
 namespace Programm4711
 {
@@ -7,9 +8,11 @@ namespace Programm4711
     {
         static void Main(string[] args)
         {
-            string path = "lol.txt";
+            string path = args.First();
             string readText = File.ReadAllText(path);
-            Console.WriteLine(readText);
+            var sut = new WordCounter();
+            var wordCount = sut.CountWords(readText);
+            System.Console.WriteLine($"Es sind {wordCount} Wörter");
         }
     }
 }

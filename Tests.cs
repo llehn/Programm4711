@@ -81,6 +81,7 @@ namespace Programm4711
             var sut = new WordCounter();
             sut.CountWords("Hi!!! ich!!!!!!!!bin!!richtig!blau!!!!!").Should().Be(5);
         } 
+
         [Fact]
         public void With_Question_Mark_In_Between_Words()
         {
@@ -88,5 +89,11 @@ namespace Programm4711
             sut.CountWords("Hi??????????ich ?? bin??????blau???? richtig!").Should().Be(5);
         }
                  
+        [Fact]
+        public void With_LineBreaksb()
+        {
+            var sut = new WordCounter();
+            sut.CountWords("das ist eine\r\ndatei mit\r\nmehreren\r\nzeilen\r\nund zeugs").Should().Be(9);
+        }
     }
 }
